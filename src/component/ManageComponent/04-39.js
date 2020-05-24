@@ -15,7 +15,7 @@ function withSomething(InputComponent) {
     render() {
       debugger;
       this.MyComponentFunction(); //상속한 InputComponent에 있는 함수를 호출
-      this.MyComponentStaticFunction(); //상속한 InputComponent에 있는 함수를 호출
+      // this.MyComponentStaticFunction(); //상속한 InputComponent에 있는 함수를 호출
       return <InputComponent {...this.props} {...this.state} />;
     }
   }
