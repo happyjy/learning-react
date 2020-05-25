@@ -26,27 +26,27 @@ import React from "react";
 // - [x] 코드 4-45 렌더 속성값 함수의 매개변수를 속성값으로 전달하는 방법
 // - [x] 코드 4-46 children 속성값을 이용해서 작성한 레이아웃 컴포넌트
 
-// import MyComponent from './component/ManageComponent/04-31';
-// import MyComponent from './component/ManageComponent/04-32';
-// import MyComponent from './component/ManageComponent/04-33';
-// import MyComponent from './component/ManageComponent/04-34';
-// import MyComponent from './component/ManageComponent/04-35';
-// import MyComponent from './component/ManageComponent/04-36';
-// import MyComponent from './component/ManageComponent/04-37';
-// import MyComponent from './component/ManageComponent/04-38';
-// import MyComponent from "./component/ManageComponent/04-39";
-// import MyComponent from "./component/ManageComponent/04-40";
-// import MyComponent from "./component/ManageComponent/04-40(withRouter)/04-40(withRouterExample)";
-// import MyComponent from "./component/ManageComponent/04-40(Router)/04-40(RouterExample)";
+// import MyComponent from './component/AppManageComponent/04-31';
+// import MyComponent from './component/AppManageComponent/04-32';
+// import MyComponent from './component/AppManageComponent/04-33';
+// import MyComponent from './component/AppManageComponent/04-34';
+// import MyComponent from './component/AppManageComponent/04-35';
+// import MyComponent from './component/AppManageComponent/04-36';
+// import MyComponent from './component/AppManageComponent/04-37';
+// import MyComponent from './component/AppManageComponent/04-38';
+// import MyComponent from "./component/AppManageComponent/04-39";
+// import MyComponent from "./component/AppManageComponent/04-40";
+// import MyComponent from "./component/AppManageComponent/04-40(withRouter)/04-40(withRouterExample)";
+// import MyComponent from "./component/AppManageComponent/04-40(Router)/04-40(RouterExample)";
 
-// import MyComponent from "./component/ManageComponent/04-41";
-// import MyComponent from "./component/ManageComponent/04-42";
-// import MyComponent from "./component/ManageComponent/04-43";
-// import MyComponent from "./component/ManageComponent/04-44";
-// import MyComponent from "./component/ManageComponent/04-45";
-import MyComponent from "./component/ManageComponent/04-46";
+// import MyComponent from "./component/AppManageComponent/04-41";
+// import MyComponent from "./component/AppManageComponent/04-42";
+// import MyComponent from "./component/AppManageComponent/04-43";
+// import MyComponent from "./component/AppManageComponent/04-44";
+// import MyComponent from "./component/AppManageComponent/04-45";
+import MyComponent from "./component/AppManageComponent/04-46";
 
-class AppLifeCycle extends React.Component {
+class App extends React.Component {
   // constructor(props) {
   // 	super(props);
   // }
@@ -71,4 +71,4 @@ class AppLifeCycle extends React.Component {
   }
 }
 
-export default AppLifeCycle;
+export default App;

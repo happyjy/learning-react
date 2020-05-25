@@ -7,30 +7,19 @@
 3.2.1 리액트 요소 이해하기
 3.2.2 리액트 요소가 돔 요소로 만들어지는 과정
 
-# LIFE CYCLE 기본
+# 3.3 생명 주기 메서드
+
+## LIFE CYCLE 기본
 
 - [참고 youtube강의](https://youtu.be/7iHepe36m0c)
 - [실습 gitHub 주소](https://github.com/happyjy/learning-reactLifeCycle)
-  - component > LifecycleForBeginner.js에 내용이 있음
-  - 다루는 lifecycle list
-    - constructor 메서드
-    - getDerivedStateFromProps 메서드
-    - render 메서드
-    - componentDidMount 메서드
-    - shouldComponentUpdate 메서드
-    - getSnapshotBeforeUpdate 메서드
-    - componentDidUpdate 메서드
-    - componentWillUnmount 메서드
-    - getDerivedStateFromError, componentDidCatch 메서드
-
-# 책 내용
+- component > LifecycleForBeginner.js에 내용이 있음
 
 - lifeCycle별로 실제 프로젝트에서 어제 사용되면 좋은지 노하우가 있다.
 - [실습 gitHub 주소](https://github.com/happyjy/learning-reactLifeCycle)
-
   - component 폴더 > 코드 숫자 별로 파일이 있음.
 
-# 3.3.1 constructor 메서드
+## 3.3.1 constructor 메서드
 
 - [x] 코드 3-27 constructor 메서드의 기본구조
 - [x] 코드 3-28 초기 속성값으로부터 상탯값을 만드는 코드
@@ -39,7 +28,7 @@
 - [x] 코드 3-31 constructor 메서드에서 setState 메서드를 호출하는 잘못된 예
 - [x] 코드 3-32 constructor 메서드에서 API를 호출하는 잘못된 예
 
-# 3.3.2 getDerivedStateFromProps 메서드
+## 3.3.2 getDerivedStateFromProps 메서드
 
 - [x] 코드 3-33 getDerivedStateFromProps 메서드에서 이전 속성값 이용하기
 - [x] 코드 3-35 getDerivedStateFromProps를 이용한 메모이제이션
@@ -49,36 +38,36 @@
 - [x] 코드 3-39 상탯갑슬 부모 컴포넌트에서 관리하는 코드
 - [x] 코드 3-40 상탯값이 전후 속성값에 의존적인 경우 사용
 
-# 3.3.3 render 메서드
+## 3.3.3 render 메서드
 
 - [x] 코드 3-41 render 메서드가 반환할 수 있는 값
 - [x] 코드 3-42 렌더함수에서 조건부 렌더링을 하는 코드
 - [x] 코드 3-43 리액트 포털을 사용한 코드
 
-# 3.3.4 componentDidMount 메서드
+## 3.3.4 componentDidMount 메서드
 
 - [x] 코드 3-44 componentDidMount 메서드에서 돔 요소에 접근하는 코드
 - [x] 코드 3-45 constructor 메서드에서 API 요청을 보내는 코드
 
-# 3.3.5 shouldComponentUpdate 메서드
+## 3.3.5 shouldComponentUpdate 메서드
 
 - [x] 코드 3-46 shouldComponentUpdate 메서드의 기본 구조
 
-# 3.3.6 getSnapshotBeforeUpdate 메서드
+## 3.3.6 getSnapshotBeforeUpdate 메서드
 
 - [x] 코드 3-47 돔 요소의 높잇값이 변경됐는지 검사하는 코드
 
-# 3.3.7 componentDidUpdate 메서드
+## 3.3.7 componentDidUpdate 메서드
 
 - [x] 코드 3-48 스크롤이 가능해지면 알려주는 코드
 - [x] 코드 3-49 componentDidUpdate 메서드에서 API를 호출하는 코드
 - [x] 코드 3-50 componentDidMount 메서드에서도 API를 호출하도록 변경하기
 
-# 3.3.8 componentWillUnmount 메서드
+## 3.3.8 componentWillUnmount 메서드
 
 - [x] 코드 3-51 componentWillUnmount 메서드에서 이벤트 처리 해제하기
 
-# 3.3.9 getDerivedStateFromError, componentDidCatch 메서드
+## 3.3.9 getDerivedStateFromError, componentDidCatch 메서드
 
 - [ ] 코드 3-52 ErrorBoundary 컴포넌트
 - [ ] 코드 3-53 ErrorBoundary 컴포넌트를사용한 코드
@@ -108,3 +97,24 @@
 - [x] 코드 4-44 마우스의 위치 정보를 알려 주는 렌더 속성값
 - [x] 코드 4-45 렌더 속성값 함수의 매개변수를 속성값으로 전달하는 방법
 - [x] 코드 4-46 children 속성값을 이용해서 작성한 레이아웃 컴포넌트
+
+# 4.4 렌더링 속도를 올리기 위한 성능최적화 방법
+
+## 4.4.1 생탯값을 불변 객체로 관리하기
+
+- [ ] 코드 4-48 상탯값을 불변 객체로 관리하기
+- [ ] 코드 4-49 상탯값을 불변 객체로 관리하는 코드
+- [ ] 코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
+- [ ] 리액트 컴포넌트의 렌더링과정
+- [ ] 코드 4-51 특정 상탯값의 변경 전과 변경 후
+
+## 4.4.2 렌더 함수에서 새로운 객체 만들지 않기
+
+- [ ] 코드 4-54 렌더 함수에서 새로운 객체를 만들어서 자식 컴포넌트의 속성값으로 전달하기
+
+## 4.4.3 메모이제이션(memoization) 이용하기
+
+- [ ] 코드 4-55 메모이제이션 사용예
+- [ ] 코드 4-56 메모이제이션의 잘못된 사용예
+
+## 4.4.4 성능 최적화를 위한 도구들 이용하기

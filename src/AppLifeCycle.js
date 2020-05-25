@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // # constructor
 // import MyComponent from './component/lifeCycle/03-27~30';
 // import MyComponent from './component/lifeCycle/03-31';
@@ -25,27 +25,27 @@ import React from 'react';
 
 // # componentDidMount
 // import MyComponent from './component/lifeCycle/03-48';
-import MyComponent from './component/lifeCycle/03-49';
+import MyComponent from "./component/lifeCycle/03-49";
 
-class AppLifeCycle extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
+class App extends React.Component {
+  // constructor(props) {
+  // 	super(props);
+  // }
 
-	render() {
-		return (
-			<div>
-				{/* <button onClick={this.speedUp}>speedUp</button>
+  render() {
+    return (
+      <div>
+        {/* <button onClick={this.speedUp}>speedUp</button>
 				<button onClick={this.speedDown}>speedDown</button>
         <MyComponent speed={this.state.speed} /> */}
 
-				<MyComponent />
+        <MyComponent />
 
-				{/* <ProductEdit product={this.state.product} />
+        {/* <ProductEdit product={this.state.product} />
 				<button onClick={this.changePrice}>Change Price</button> */}
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
-export default AppLifeCycle;
+export default App;
