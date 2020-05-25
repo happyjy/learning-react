@@ -3,10 +3,10 @@ import React from "react";
 
 // ## 4.4.1 생탯값을 불변 객체로 관리하기
 
-// - [ ] 코드 4-48 상탯값을 불변 객체로 관리하기
-// - [ ] 코드 4-49 상탯값을 불변 객체로 관리하는 코드
-// - [ ] 코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
-// - [ ] 리액트 컴포넌트의 렌더링과정
+// - [x] 코드 4-48 상탯값을 불변 객체로 관리하기
+// - [x] 코드 4-49 상탯값을 불변 객체로 관리하는 코드
+// - [x] 코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
+// - [x] 리액트 컴포넌트의 렌더링과정
 // - [ ] 코드 4-51 특정 상탯값의 변경 전과 변경 후
 
 // ## 4.4.2 렌더 함수에서 새로운 객체 만들지 않기
@@ -20,10 +20,8 @@ import React from "react";
 
 // ## 4.4.4 성능 최적화를 위한 도구들 이용하기
 
-import MyComponent from "./component/performance/04-48";
-// import MyComponent from "./component/performance/04-49";
-// import MyComponent from "./component/performance/04-50";
-// import MyComponent from "./component/performance/04-51";
+// import MyComponent from "./component/performance/04-48-50";
+import MyComponent from "./component/performance/04-51";
 // import MyComponent from "./component/performance/04-52";
 // import MyComponent from "./component/performance/04-53";
 // import MyComponent from "./component/performance/04-54";
