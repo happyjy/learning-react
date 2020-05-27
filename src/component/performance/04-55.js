@@ -1,70 +1,63 @@
-import React, { Component } from "react";
+import React from "react";
+import memoize from "lodash/memoize";
 /*
-  코드 4-51 특정 상탯값의 변경 전과 변경 후
+  코드 4-55 메모이제이션 사용예
+  # fibonacci에 memoization 적용예
+    * https://www.sitepoint.com/implementing-memoization-in-javascript/
 
 */
-function withMountEvent(InputComponent, componentName) {
-  return class OutputComponent extends Component {
-    componentDidMount() {
-      console.log("### 컴포넌트 이름 저장한는 함수 호출:", componentName);
-    }
-    render() {
-      return <InputComponent {...this.props} />;
-    }
-  };
+
+function sort(arr) {
+  debugger;
+  let sortedArr = arr.sort();
+  console.log("### sort functions");
+  return sortedArr;
 }
+
+const sort2 = memoize(sort);
+const inputArr1 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+const output1 = sort2(inputArr1);
+const output2 = sort2(inputArr1);
+console.log(output1 === output2); // true
+const inputArr2 = [10, 20, 30, 10, 200, 300, 1, 23, 4, 1, 23];
+const output3 = sort2(inputArr2);
+console.log(output1 !== output3); // true
+debugger;
+
+// # memoize code
+// function memoize(func, resolver) {
+//   if (
+//     typeof func != "function" ||
+//     (resolver != null && typeof resolver != "function")
+//   ) {
+//     throw new TypeError(FUNC_ERROR_TEXT);
+//   }
+//   var memoized = function () {
+//     var args = arguments,
+//       key = resolver ? resolver.apply(this, args) : args[0],
+//       cache = memoized.cache;
+//      //cache에서 확인
+//     if (cache.has(key)) {
+//       return cache.get(key);
+//     }
+//     var result = func.apply(this, args);
+//     cache에 담기
+//     memoized.cache = cache.set(key, result) || cache;
+//     return result;
+//   };
+//   memoized.cache = new (memoize.Cache || MapCache)();
+//   return memoized;
+// }
+
+// Expose `MapCache`.
+// memoize.Cache = MapCache;
+
+// module.exports = memoize;
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      todos: [
-        { title: "eat kimchi", priority: "low" },
-        { title: "gotoSleep", priority: "high" },
-      ],
-    };
-
-    this.onClick1 = () => {
-      const { todos } = this.state;
-      todos[0].priority = "hhh";
-      this.setState({ todos });
-    };
-
-    //코드 4-49 상탯값을 불변객체로 관리하는 코드
-    // ...todos 자체가 this.state.todos 값의 memory reference를 끊어 버린다.(shallow copy)
-    this.onClick2 = () => {
-      const { todos } = this.state;
-      const newTodos = todos.map((v) => {
-        v.priority = "iii";
-      });
-      this.setState({ todos: newTodos });
-    };
-  }
-
   render() {
-    return (
-      <div>
-        <button onClick={this.onClick1}>click1</button>
-        <button onClick={this.onClick2}>click2</button>
-      </div>
-    );
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps.todos === nextState.todos);
-    //코드 4-49 상탯값을 불변객체로 관리하는 코드
-    console.log(nextProps.todos, nextState.todos);
-    console.log("------------------------");
-    return true;
-  }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("Component Did Update");
-    console.log({ prevProps, prevState, snapshot });
-    console.log(prevState.todos === this.state.todos); //<= 확인해보자
-    // 코드 4-49 실행결과: prevState.todos === this.state.todos
-    // 코드 4-50 실행결과: prevState.todos !== this.state.todos
-    console.log("------------------------");
+    return <div> memoize </div>;
   }
 }
 
-export default withMountEvent(MyComponent, "MyComponent");
+export default MyComponent;

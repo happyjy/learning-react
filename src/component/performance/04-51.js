@@ -1,93 +1,36 @@
-import React, { PureComponent } from 'react';
+import React from "react";
 /*
-  코드 4-54 렌더 함수에서 새로운 객체를 만들어서 자식 컴포넌트의 속성값으로 전달하기
-  - 상탯값을 불변 객체로 관리해도 렌더 함수에서 새로운 객체를 만들면 문제가 된다.
-  - 렌더 함수에서 새로운 객체를 만들어서 자식 컴포넌트의 속성값으로 입력하면,
-  속성값의 내용이 변경되지 않아도 자식 컴포넌트 입장에서는 속성값이 변경됐다고 인식한다.
+  코드 4-51 특정 상탯값의 변경 전과 변경 후
+  코드 4-52 상탯값을 불변객체로 관리했을 때 변경 여부 확인하기
+        * shouldComponentUpdate는 별도로 구현하지 않으면 기본값 참을 반환한다.
+중요 =>  * 즉, 송성값이나 상탯값이 변경되지 안아도 부모 컴포넌트가 렌더링 될때마다 자식 컴포넌트도 렌더링된다.
+        * 이 메서드가 항상 참을 반환해도 석성값이나 상탯값이 변경되지 않으면 실제 돔도 변경되지 않기 때문에 크게 문제 되지 않는다. 
+POINT=> * 하지만 렌더링 성능이 중요한 상황에서는 shouldComponentUpdate 메서드를 직접 구현해서 가상 돔의     계산도 생략 할 수 있다. 
 
-  - 예제 코드는 렌더함수에서 새로운 객체를 만드어서 자식 컴포넌트의 속성값으로 전달하는 코드
-    - Parent 클래스 컴포넌트에서 render 함수에서 fruitOptions, onChange 프로퍼티에 call by reference로 객체를 호출하는것이아니라 생성할 객체를 넣어 놓으면 button 클릭시 rendering 될때마다 객체가 새로 생겨서 SelectFruite 클래스가 다시 그려진다. (log로 확인가능)
+  * 상탯값을 불변 객체로 관리했다면 this.state에 직접 연결된 데이터만 단순 비교하면 컴포넌트의 상탯값이 변경되었는지 알 수 있다. 
+  * 속성값도 마찬가지 방식으로 변경 여부를 판단할 수 있다. 
+  * 이런 방식으로 석성값과 상탯값이 변경됐는지 판단하는 로직으로 shouldCommponentUpdate생명주기 메서드가 구현된 게 바로 리액트에서 제공하는 PureComponent 컴포넌트와 React.memo함수다.
 */
-function Select({ options, selected, onChange }) {
-	console.log('### Select Component', options, selected, onChange);
-	return (
-		<div>
-			<select onChange={onChange}>
-				{options &&
-					options.map((option, idx) => {
-						return (
-							<option key={idx} value={option}>
-								{option}
-							</option>
-						);
-					})}
-			</select>
-		</div>
-	);
-}
-class SelectFruit extends PureComponent {
-	state = {
-		fruitOptions: [ 'apple', 'banana', 'orange' ]
-	};
-	render() {
-		const { selectedFruit, onChange, count } = this.props;
-		console.log('### SelectFruit > count from Prent click button: ', count);
-		return (
-			<div>
-				<Select
-					options={[ 'apple', 'banana', 'orange' ]}
-					// options={this.state.fruitOptions}
-					selected={selectedFruit}
-					onChange={onChange}
-				/>
-			</div>
-		);
-	}
+
+const prevState = {
+  todos: [
+    { title: "fixbug", priority: "high" },
+    { title: "fixbug1", priority: "high1" },
+  ],
+};
+const nextState = (prevState.todos[1].priority = "123");
+// const nextState = {
+//   todos: [
+//     { title: "fixbug", priority: "high" },
+//     { title: "fixbug1", priority: "low" },
+//   ],
+// };
+
+console.log(prevState.todos !== nextState.todos);
+class MyComponent extends React.Component {
+  render() {
+    return <div> shouldComponentUpdate </div>;
+  }
 }
 
-class Parent extends PureComponent {
-	state = {
-		count: 0,
-		selectedFruit: 'banana',
-		fruitOptions: [ 'apple', 'banana', 'orange' ]
-	};
-
-	onClick = () => {
-		const { count } = this.state;
-		this.setState({ count: count + 1 });
-	};
-
-	onChange = (fruit) => {
-		if (fruit !== this.state.selectedFruit) {
-			this.setState({ selectedFruit: fruit });
-		}
-		console.log('### state.selectedFruite: ', this.state.selectedFruit);
-	};
-
-	render() {
-		const { selectedFruit, count } = this.state;
-		console.log('### Parent > render: ', { selectedFruit, count });
-		return (
-			<div>
-				<p>{`count: ${count}`}</p>
-				<button onClick={this.onClick}>increase count</button>
-				<SelectFruit
-					// count={count}
-					selectedFruit={selectedFruit}
-					// fruitOptions={this.state.fruitOptions}
-					// fruitOptions={[ 'apple', 'banana', 'orange' ]}
-					onChange={this.onChange}
-					// onChange={(fruit) => {
-					// 	debugger;
-					// 	if (fruit !== selectedFruit) {
-					// 		this.setState({ selectedFruit: fruit });
-					// 	}
-					// console.log("### state.selectedFruite: ", this.state.selectedFruit);
-					// }}
-				/>
-			</div>
-		);
-	}
-}
-
-export default Parent;
+export default MyComponent;

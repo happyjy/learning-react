@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 /*
-  코드 4-48 상탯값을 불변 객체로 관리하기
-  코드 4-49 상탯값을 불변객체로 관리하는 코드 
+  4.4.1 생탯값을 불변 객체로 관리하기
+  
+  코드 4-48 상탯값 내부 배열을 직접 수정하기
+  코드 4-49 상탯값을 불변 객체로 관리하는 코드 
   코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
+
   # 리액트 컴포넌트의 렌더링과정
   
   # 리액트 렌더링에 대해서 
@@ -44,7 +47,7 @@ class MyComponent extends React.Component {
       ],
     };
 
-    // 코드 4-48 상탯값을 불변 객체로 관리하기
+    // 코드 4-48 상탯값 내부 배열을 직접 수정하기
     this.onClick1 = () => {
       const { todos } = this.state;
       todos.push({ title: "fix bug", priority: "high" });
@@ -52,7 +55,13 @@ class MyComponent extends React.Component {
     };
 
     //코드 4-49 상탯값을 불변객체로 관리하는 코드
-    // ...todos 자체가 this.state.todos 값의 memory reference를 끊어 버린다.(shallow copy)
+    // ...todos 자체가 this.state.todos값을 shallow copy한다.
+
+    // # 추가 자료 - How to Deep Clone an Array in JavaScript > Shallow vs Deep Clone
+    // https://dev.to/samanthaming/how-to-deep-clone-an-array-in-javascript-3cig
+    // # 추가 자료
+    // * Understanding Deep and Shallow Copy in Javascript
+    // https://we-are.bookmyshow.com/understanding-deep-and-shallow-copy-in-javascript-13438bad941c
     this.onClick2 = () => {
       const { todos } = this.state;
       const newTodos = [...todos, { title: "fix bug", priority: "high" }];
@@ -63,24 +72,25 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.onClick1}>click1</button>
-        <button onClick={this.onClick2}>click2ㄴ</button>
+        <button onClick={this.onClick1}>click1(불변성보존x)</button>
+        <button onClick={this.onClick2}>click2(불변성보존)</button>
       </div>
     );
   }
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps.todos === nextState.todos);
-    console.log(nextProps.todos, nextState.todos);
+    console.log("### shouldComponentUpdate ### ");
+    console.log(nextState.todos, this.state.todos);
+    console.log(nextState.todos === this.state.todos); //<= 버튼1, 버튼2를 눌러 확인해보자
     console.log("------------------------");
     return true;
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log("Component Did Update");
-    console.log({ prevProps, prevState, snapshot });
+    console.log(prevState.todos, this.state.todos);
     // 코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
-    console.log(prevState.todos === this.state.todos); //<= 확인해보자
-    // 코드 4-49 실행결과: prevState.todos === this.state.todos
-    // 코드 4-50 실행결과: prevState.todos !== this.state.todos
+    console.log(prevState.todos === this.state.todos); //<= 버튼1, 버튼2를 눌러 확인해보자
+    // 코드 4-48 실행결과: prevState.todos === this.state.todos
+    // 코드 4-59 실행결과: prevState.todos !== this.state.todos
     console.log("------------------------");
   }
 }
