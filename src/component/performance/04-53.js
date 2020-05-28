@@ -1,70 +1,29 @@
-import React, { Component } from "react";
+import React from 'react';
 /*
-  코드 4-51 특정 상탯값의 변경 전과 변경 후
-
+  코드 4-53 JSX문법이 createElement로 변환된 코드(Parent, Parent1)
+  * createElement로 변환된 코드를 보면 렌더링할 때마다 새로운 속성값 객체가 생성된다.
+  * 객체의 내부 속성값이 변경되지 않아도 최상위 객체의 레퍼런스는 항상 변경된다.
+  * 따라서 리액트는 소것ㅇ값의 최상위 객체에 직접 연결(1-depth)된 모든 값을 단순 비교한다.
+  * 상탯값도 실제값은 변경되지 않더라도 여러 번 setState 메서드가 호출되면서 최상위 객체의 레퍼런스만 변경될 수 있다.
+  * 따라서 속성값과 마찬가지로 최상위 객체에 직접 연결 된  모든 값을 단순 비교한다.
 */
-function withMountEvent(InputComponent, componentName) {
-  return class OutputComponent extends Component {
-    componentDidMount() {
-      console.log("### 컴포넌트 이름 저장한는 함수 호출:", componentName);
-    }
-    render() {
-      return <InputComponent {...this.props} />;
-    }
-  };
-}
+
+// function Child() {
+// 	return <div>123</div>;
+// }
+
+// function Parent() {
+// 	return <Child name='mike' age={23} />;
+// }
+
+// function Parent1() {
+// 	return React.createElement(Child, { name: 'mike', age: 23 });
+// }
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      todos: [
-        { title: "eat kimchi", priority: "low" },
-        { title: "gotoSleep", priority: "high" },
-      ],
-    };
-
-    this.onClick1 = () => {
-      const { todos } = this.state;
-      todos[0].priority = "hhh";
-      this.setState({ todos });
-    };
-
-    //코드 4-49 상탯값을 불변객체로 관리하는 코드
-    // ...todos 자체가 this.state.todos 값의 memory reference를 끊어 버린다.(shallow copy)
-    this.onClick2 = () => {
-      const { todos } = this.state;
-      const newTodos = todos.map((v) => {
-        v.priority = "iii";
-      });
-      this.setState({ todos: newTodos });
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.onClick1}>click1</button>
-        <button onClick={this.onClick2}>click2</button>
-      </div>
-    );
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps.todos === nextState.todos);
-    //코드 4-49 상탯값을 불변객체로 관리하는 코드
-    console.log(nextProps.todos, nextState.todos);
-    console.log("------------------------");
-    return true;
-  }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("Component Did Update");
-    console.log({ prevProps, prevState, snapshot });
-    console.log(prevState.todos === this.state.todos); //<= 확인해보자
-    // 코드 4-49 실행결과: prevState.todos === this.state.todos
-    // 코드 4-50 실행결과: prevState.todos !== this.state.todos
-    console.log("------------------------");
-  }
+	render() {
+		return <div> memoize </div>;
+	}
 }
 
-export default withMountEvent(MyComponent, "MyComponent");
+export default MyComponent;
