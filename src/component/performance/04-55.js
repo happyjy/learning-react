@@ -1,5 +1,5 @@
-import React from "react";
-import memoize from "lodash/memoize";
+import React from 'react';
+import memoize from 'lodash/memoize';
 /*
   코드 4-55 메모이제이션 사용예
   # fibonacci에 memoization 적용예
@@ -8,18 +8,18 @@ import memoize from "lodash/memoize";
 */
 
 function sort(arr) {
-  debugger;
-  let sortedArr = arr.sort();
-  console.log("### sort functions");
-  return sortedArr;
+	debugger;
+	let sortedArr = arr.sort();
+	console.log('### sort functions');
+	return sortedArr;
 }
 
 const sort2 = memoize(sort);
-const inputArr1 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+const inputArr1 = [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ];
 const output1 = sort2(inputArr1);
 const output2 = sort2(inputArr1);
 console.log(output1 === output2); // true
-const inputArr2 = [10, 20, 30, 10, 200, 300, 1, 23, 4, 1, 23];
+const inputArr2 = [ 10, 20, 30, 10, 200, 300, 1, 23, 4, 1, 23 ];
 const output3 = sort2(inputArr2);
 console.log(output1 !== output3); // true
 debugger;
@@ -55,9 +55,9 @@ debugger;
 // module.exports = memoize;
 
 class MyComponent extends React.Component {
-  render() {
-    return <div> memoize </div>;
-  }
+	render() {
+		return <div> memoize </div>;
+	}
 }
 
 export default MyComponent;

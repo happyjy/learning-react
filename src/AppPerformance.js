@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // # 4.4 렌더링 속도를 올리기 위한 성능최적화 방법
 
 // ## 4.4.1 생탯값을 불변 객체로 관리하기
@@ -22,37 +22,37 @@ import React from "react";
 
 // ## 4.4.4 성능 최적화를 위한 도구들 이용하기
 
-import MyComponent from "./component/performance/04-48-50";
+// import MyComponent from "./component/performance/04-48-50";
 // import MyComponent from "./component/performance/04-51";
 // import MyComponent from "./component/performance/04-52";
 // import MyComponent from "./component/performance/04-53";
 // import MyComponent from "./component/performance/04-54";
-// import MyComponent from "./component/performance/04-55";
+import MyComponent from './component/performance/04-55';
 // import MyComponent from "./component/performance/04-56";
 
 class AppLifeCycle extends React.Component {
-  // constructor(props) {
-  // 	super(props);
-  // }
-  state = {
-    name: "jyoon",
-    age: "30",
-    date: "20200524",
-  };
-  render() {
-    return (
-      <div>
-        {/* <button onClick={this.speedUp}>speedUp</button>
+	// constructor(props) {
+	// 	super(props);
+	// }
+	state = {
+		name: 'jyoon',
+		age: '30',
+		date: '20200524'
+	};
+	render() {
+		return (
+			<div>
+				{/* <button onClick={this.speedUp}>speedUp</button>
 				<button onClick={this.speedDown}>speedDown</button>
         <MyComponent speed={this.state.speed} /> */}
 
-        <MyComponent {...this.state} />
+				<MyComponent {...this.state} />
 
-        {/* <ProductEdit product={this.state.product} />
+				{/* <ProductEdit product={this.state.product} />
 				<button onClick={this.changePrice}>Change Price</button> */}
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default AppLifeCycle;

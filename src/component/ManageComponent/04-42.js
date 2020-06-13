@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 /*
     코드 4-42 children을 사용하지 않은 렌더 속성값
-
  */
 class MountEvent extends Component {
   componentDidMount() {
@@ -27,10 +26,13 @@ function MyComponent() {
   return (
     <MountEvent
       name="MyComponent"
+      //POINT render를 props로 전달해서 render해줄수도 있다.
       render={() => (
         <div>
-          MountEvent 컴포넌트에 render이름의 props로 넘긴 것 입니다. MounEvent
-          컴포넌트 chile function입니다.
+          <p>코드 4-42 children을 사용하지 않은 렌더 속성값</p>
+          <p>
+            MountEvent 컴포넌트에 render property명으로 props로 넘긴 것 입니다.
+          </p>
         </div>
       )}
     ></MountEvent>

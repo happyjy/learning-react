@@ -19,7 +19,7 @@ const Topics = ({ match, location, history }) => (
         <Link to={`${match.url}/rendering`}>Rendering with React</Link>
       </li>
       <li>
-        a<Link to={`${match.url}/components`}>Components</Link>
+        <Link to={`${match.url}/components`}>Components</Link>
       </li>
       <li>
         <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
