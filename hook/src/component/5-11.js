@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
 /*
-  코드 5-8 useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기
+  코드 5-11 훅을 사용하면 로직별로 코드를 모을 수 있다.
+  * 코드 5-07, 09 클래스 컴포넌트로 생성한 API호출, windowWidth 코드를 합쳐보자!
+  * 각각의 로직이 생명주기 함수별로 되어 있어 로직이 분산됐다.
 */
+
 class Profile extends React.Component {
   state = {
     user: null,
+    width: window.innerWidth,
   };
   componentDidMount() {
-    /*  */
     const { userId } = this.props || { userId: "happyjy" };
     axios("https://api.github.com/users/happyjy").then((Response) => {
       console.log(Response);
       this.setState({ user: Response.data });
     });
+
+    window.addEventListener("resize", this.onResize);
   }
   componentDidUpdate(prevProps) {
     const { userId } = this.props || { userId: "happyjy" };
@@ -24,22 +29,25 @@ class Profile extends React.Component {
       });
     }
   }
+  componentWillMount() {
+    window.removeEventListener("resize", this.onResize);
+  }
+  onResize = () => {
+    this.setState({ width: window.innerWidth });
+  };
   render() {
-    const { user } = this.state;
+    const { user, width } = this.state;
     return (
       <div>
         <div>
           <h1> 설명 </h1>
-          <p> 코드 5-5 useEffect 훅에서 API 호출하기</p>
+          <p> 코드 5-11 훅을 사용하면 로직별로 코드를 모을 수 있다.</p>
           <p>
             {" "}
-            * ⭐️ usdEffect 훅의 두번째 매개변수로 배열을 입력하면, 배열의 값이
-            변경되는 경우에만 함수가 호출
+            * 코드 5-07, 09 클래스 컴포넌트로 생성한 API호출, windowWidth 코드를
+            합쳐보자!
           </p>
-          <p>
-            {" "}
-            * 여기서는 userId 값이 변경되는 경우에만 API 통신을 하도록 설정
-          </p>
+          <p> * 각각의 로직이 생명주기 함수별로 되어 있어 로직이 분산됐다.</p>
         </div>
         <hr></hr>
         <div>
@@ -52,6 +60,7 @@ class Profile extends React.Component {
               </p>
             )}
           </div>
+          <div>{`width is ${width}`}</div>
         </div>
       </div>
     );

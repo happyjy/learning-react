@@ -9,20 +9,20 @@ export default (function () {
     // },
     // { codeNumber: "5-05", title: "useEffect 훅의 사용예" },
     // { codeNumber: "5-06", title: "useEffect 훅에서 API 호출하기" },
-    { codeNumber: "5-07", title: "클래스형 컴포넌트에서 API 호출하기" },
-    {
-      codeNumber: "5-08",
-      title: "useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기",
-    },
-    {
-      codeNumber: "5-09",
-      title: "이벤트 처리 함수의 등록과 해제를 클래스형 컴포넌트로 작성하기",
-    },
-    {
-      codeNumber: "5-10",
-      title: "훅을 사용하면 로직별로 코드를 모을 수 있다.",
-    },
-    { codeNumber: "5-11", title: "클래스형 컴포넌트에서는 로직이 분산된다." },
+    // { codeNumber: "5-07", title: "클래스형 컴포넌트에서 API 호출하기" },
+    // {
+    //   codeNumber: "5-08",
+    //   title: "useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기",
+    // },
+    // {
+    //   codeNumber: "5-09",
+    //   title: "이벤트 처리 함수의 등록과 해제를 클래스형 컴포넌트로 작성하기",
+    // },
+    // {
+    //   codeNumber: "5-10",
+    //   title: "훅을 사용하면 로직별로 코드를 모을 수 있다.",
+    // },
+    // { codeNumber: "5-11", title: "클래스형 컴포넌트에서는 로직이 분산된다." },
     { codeNumber: "5-12", title: "useWindowWidth 커스텀 훅" },
     { codeNumber: "5-13", title: "useWindowWidth 훅 사용하기" },
     { codeNumber: "5-14", title: "useHasMounted 커스텀 훅" },

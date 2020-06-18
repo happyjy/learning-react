@@ -35,6 +35,7 @@ class Profile extends React.Component {
       <div>
         <div>
           <h1> 설명 </h1>
+          <p> 코드 5-7 useEffect 훅에서 API 호출하기</p>
           <p> * 코드 5-6을 클래스형 컴포넌트로 작성 </p>
           <p> * 첫번째 렌더링 후에는 componentDidMount메서드가 호출, </p>
           <p>

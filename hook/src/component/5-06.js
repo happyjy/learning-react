@@ -13,14 +13,13 @@ function Profile({ userId }) {
       console.log(Response);
       setUser(Response.data);
     });
-    // document.getElementById("count").innerHTML = `업데이트 횟수: ${count}`;
   }, [userId]);
 
   return (
     <div>
       <div>
         <h1> 설명 </h1>
-        <p> 코드 5-5 useEffect 훅에서 API 호출하기</p>
+        <p>코드 5-6 useEffect 훅에서 API 호출하기</p>
         <p>
           {" "}
           * ⭐️ usdEffect 훅의 두번째 매개변수로 배열을 입력하면, 배열의 값이
