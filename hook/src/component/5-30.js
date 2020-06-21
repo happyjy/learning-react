@@ -1,26 +1,26 @@
-import React, { useState, useEffect, useDebugValue } from "react";
+import { useState, useEffect, useDebugValue } from 'react';
 
 function FriendStatus(props) {
-  const [isOnline, setIsOnline] = useState(true);
+	const [ isOnline, setIsOnline ] = useState(true);
 
-  // Show a label in DevTools next to this Hook
-  // e.g. "FriendStatus: Online"
-  useDebugValue(isOnline ? "Online" : "Offline");
+	// Show a label in DevTools next to this Hook
+	// e.g. "FriendStatus: Online"
+	useDebugValue(isOnline ? 'Online' : 'Offline');
 
-  useEffect(() => {
-    function handleStatusChange(status) {
-      setIsOnline(status.isOnline);
-    }
-    // ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
-    // return () => {
-    //   ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
-    // };
-  });
+	useEffect(() => {
+		function handleStatusChange(status) {
+			setIsOnline(status.isOnline);
+		}
+		// ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+		// return () => {
+		//   ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+		// };
+	});
 
-  if (isOnline === null) {
-    return "Loading...";
-  }
-  return isOnline ? "Online" : "Offline";
+	if (isOnline === null) {
+		return 'Loading...';
+	}
+	return isOnline ? 'Online' : 'Offline';
 }
 
 // import React, { useState, useDebugValue } from "react";

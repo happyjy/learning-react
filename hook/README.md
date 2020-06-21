@@ -92,7 +92,7 @@
 - [x] 코드 5-19 훅을 사용하지 않고 콘텍스트 API를 사용하기
 - [x] 코드 5-20 useContext 훅 사용하기
 
-### 2.2 함수형 컴포넌트에서 돔 요소 접근하기: useEffect
+### 2.2 함수형 컴포넌트에서 돔 요소 접근하기: useRef
 
 - [x] 코드 5-21 useRef 훅 사용하기
 
@@ -148,36 +148,36 @@
 ### 3.2 componentDidUpdate 메서드
 
 - [x] 코드 5-34 usePrevious 커스텀 훅
-- [x] 코드 5-35 훅으로 변환한 componentDidUpdate 메서드
+- [x] 코드 5-35 훅으로 변환할 componentDidUpdate 메서드
 - [x] 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
 - [x] 코드 5-37 useOnUpdate 커스텀 훅
 
 ### 3.3 getDerivedStateFromProps 메서드
 
-- [ ] 코드 5-38 훅으로 변경할 getDerivedStateFromProps 정적 메서드
-- [ ] 코드 5-39 getDerivedStateFromProps 정적 메서드를 훅으로 변경하기
+- [x] 코드 5-38 훅으로 변경할 getDerivedStateFromProps 정적 메서드
+- [x] 코드 5-39 getDerivedStateFromProps 정적 메서드를 훅으로 변경하기
 
 ### 3.4 forceUpdate 메서드
 
-- [ ] 코드 5-40 useReducer 훅을 이용해서 forceUpdate 메서드를 구현하기
+- [x] 코드 5-40 useReducer 훅을 이용해서 forceUpdate 메서드를 구현하기
 
 ## 4. 기존 클래스형 컴포넌트를 고려한 커스텀 훅 작성법
 
 ### 4.1 커스텀 훅의 반환값이 없는 경우
 
-- [ ] 코드 5-41 디바운스 기능을 제공하는 useDebounce 훅의 구현 및 사용
+- [x] 코드 5-41 디바운스 기능을 제공하는 useDebounce 훅의 구현 및 사용
 
 1. 클래스형 컴포넌트에서 useDebounce 훅 이용하기
 
-- [ ] 코드 5-42 useDebounce 훅의 래퍼 컴포넌트
-- [ ] 코드 5-43 클래스형 컴포넌트에서 Debounce 컴포넌트를 사용하기
+- [x] 코드 5-42 useDebounce 훅의 래퍼 컴포넌트
+- [x] 코드 5-43 클래스형 컴포넌트에서 Debounce 컴포넌트를 사용하기
 
 ### 4.2 커스텀 훅의 반환값이 있는 경우
 
 1. 마운트 상태를 관리하는 useHasMounted 훅
 
-- [ ] 코드 5-44 useHasMounted 훅의 기능을 제공하기 위해 구현한 고차 컴포넌트와 렌더 속성값
+- [x] 코드 5-44 useHasMounted 훅의 기능을 제공하기 위해 구현한 고차 컴포넌트와 렌더 속성값
 
 2. 클래스형 컴포넌트에서 useHasMounted 훅 이용하기
 
-- [ ] 코드 5-45 클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기
+- [x] 코드 5-45 클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기

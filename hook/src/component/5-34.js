@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import usePrevious from "./customHook/usePrevious";
+import React, { useState } from 'react';
+import usePrevious from './customHook/usePrevious';
 /*
   # 코드 5-34 usePrevious 커스텀 훅
     * 이전 상탯값이나 이전 속성값이 필요할때 유용한 커스텀 훅
@@ -10,7 +10,7 @@ import usePrevious from "./customHook/usePrevious";
     * 함수형 컴포넌트는 인스턴스가 없기 때문에 이전 값이 필요하다면 useRef 훅으로 직접 관리해야 한다.
     * 이전 상탯값이나 이전 속성값이 필요할때 유용한 커스텀 훅
     
-  # ⭐️ usePrevious 설명(import로 뺌)
+    * ⭐️ usePrevious 설명(import로 뺌)
     * 코드 5-22 참고 
     POINT 1. 매개변수로 현재 값을 받는다. 
     POINT 2. 이전 값을 기억하기 위해 useRef 훅을 이용
@@ -20,7 +20,7 @@ import usePrevious from "./customHook/usePrevious";
   # 예제 테스트 방법
     * input에 입력 해보자 
     
-  # ⭐️ input에 입력시 s 
+  # ⭐️ input에 입력시 수행 순서 
     * debugger 순서로 callstack순서를 확인해보자(step 1,2,3 확인) 
     * ⭐️ useState의 setxxx function이후 가 일어나면 
       setxxx functino이 있는 function 전체 다시 수행된다. 
@@ -43,43 +43,43 @@ import usePrevious from "./customHook/usePrevious";
 //   return valueRef.current || "";
 // }
 
-export default function () {
-  debugger; //step2
-  const [value, setValue] = useState("");
-  const previousValue = usePrevious(value);
+export default function() {
+	debugger; //step2
+	const [ value, setValue ] = useState('');
+	const previousValue = usePrevious(value);
 
-  const handleChange = (e) => {
-    debugger; //step1
-    console.log("### handleChange: ");
-    // console.log(e.target.value);
-    setValue(e.target.value);
-  };
+	const handleChange = (e) => {
+		debugger; //step1
+		console.log('### handleChange: ');
+		// console.log(e.target.value);
+		setValue(e.target.value);
+	};
 
-  const handleSubmit = (e) => {
-    console.log("### handleSubmit: ");
-    e.preventDefault();
-  };
-  return (
-    <div>
-      <div>
-        <h1> 설명 </h1>
-      </div>
-      <hr></hr>
-      <div>
-        <h1> 예제 </h1>
-        <div>
-          <label>{`this is previousValue: ${previousValue}`}</label>
-          <br></br>
-          <label>{`this is currentValue: ${value}`}</label>
-        </div>
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input type="text" value={value} onChange={handleChange}></input>
-            <br></br>
-            <button type="submit">enter</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+	const handleSubmit = (e) => {
+		console.log('### handleSubmit: ');
+		e.preventDefault();
+	};
+	return (
+		<div>
+			<div>
+				<h1> 설명 </h1>
+			</div>
+			<hr />
+			<div>
+				<h1> 예제 </h1>
+				<div>
+					<label>{`this is previousValue: ${previousValue}`}</label>
+					<br />
+					<label>{`this is currentValue: ${value}`}</label>
+				</div>
+				<div>
+					<form onSubmit={handleSubmit}>
+						<input type='text' value={value} onChange={handleChange} />
+						<br />
+						<button type='submit'>enter</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	);
 }

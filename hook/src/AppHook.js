@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import egList from "./egList.js";
-import "./AppHook.scss";
-import "./component/5-01";
+import React, { useState, useEffect } from 'react';
+import egList from './egList.js';
+import './AppHook.scss';
+import './component/5-01';
 // # HOOK
 // 코드 5-1 useState 훅 사용하기
 // 코드 5-2 클래스형 컴포넌트에서 상태값 관리하기
@@ -37,7 +37,7 @@ import "./component/5-01";
 // 코드 5-32 constructor 메서드를 훅으로 구현하기
 // 코드 5-33 useOnFirstRender 커스텀 훅
 // 코드 5-34 usePrevious 커스텀 훅
-// 코드 5-35 훅으로 변환한 componentDidUpdate 메서드
+// 코드 5-35 훅으로 변환할 componentDidUpdate 메서드
 // 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
 // 코드 5-37 useOnUpdate 커스텀 훅
 // 코드 5-38 훅으로 변경할 getDerivedStateFromProps 정적 메서드
@@ -50,85 +50,79 @@ import "./component/5-01";
 // 코드 5-45 클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기
 
 function App() {
-  const examples = egList;
+	const examples = egList;
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [Component, setComponent] = useState({});
+	const [ currentIndex, setCurrentIndex ] = useState(0);
+	const [ Component, setComponent ] = useState({});
 
-  const moveFirtst = () => moveExample(0);
-  const movePrevious = () => moveExample(currentIndex - 1);
-  const moveNext = () => moveExample(currentIndex + 1);
-  const moveLast = () => moveExample(examples.length - 1);
-  const moveExample = (index) => {
-    // debugger;
-    if (typeof index !== "number") {
-      index = index.target.dataset.index;
-    }
-    setCurrentIndex(Math.max(Math.min(index, examples.length - 1), 0));
-  };
+	const moveFirtst = () => moveExample(0);
+	const movePrevious = () => moveExample(currentIndex - 1);
+	const moveNext = () => moveExample(currentIndex + 1);
+	const moveLast = () => moveExample(examples.length - 1);
+	const moveExample = (index) => {
+		// debugger;
+		if (typeof index !== 'number') {
+			index = index.target.dataset.index;
+		}
+		setCurrentIndex(Math.max(Math.min(index, examples.length - 1), 0));
+	};
 
-  useEffect(() => {
-    import(`./component/${examples[currentIndex].codeNumber}.js`).then(
-      (module) => {
-        // console.log("### module: ", module);
-        //module.default: import 객체
-        setComponent({ comp: module.default });
-      },
-    );
-  }, [currentIndex]);
+	useEffect(
+		() => {
+			import(`./component/${examples[currentIndex].codeNumber}.js`).then((module) => {
+				// console.log("### module: ", module);
+				//module.default: import 객체
+				setComponent({ comp: module.default });
+			});
+		},
+		[ currentIndex ]
+	);
 
-  // console.log(examples);
+	// console.log(examples);
 
-  //# test value
-  //  - 예제 04-35에서 사용
-  const state = {
-    id: "happyjy",
-    name: "jyoon",
-    age: "30",
-    date: "20200524",
-  };
-  return (
-    <div className="container">
-      <div className="subContainerLeft">
-        <ul className="examples">
-          {examples &&
-            examples.map((v, i) => (
-              <li
-                key={i}
-                className="example"
-                onClick={moveExample}
-                data-index={i}
-              >
-                {v.codeNumber}
-                <br></br> {v.title}
-              </li>
-            ))}
-        </ul>
-      </div>
-      <div className="subContainerRight">
-        <div className="itemMove">
-          <ul className="buttonContainer">
-            <li className="buttonItem" onClick={moveFirtst}>
-              first
-            </li>
-            <li className="buttonItem" onClick={movePrevious}>
-              previous
-            </li>
-            <li className="buttonItem" onClick={moveNext}>
-              next
-            </li>
-            <li className="buttonItem" onClick={moveLast}>
-              last
-            </li>
-          </ul>
-        </div>
-        <hr></hr>
-        <div className="component">
-          {Component.comp && <Component.comp {...state} />}
-        </div>
-      </div>
-    </div>
-  );
+	//# test value
+	//  - 예제 04-35에서 사용
+	const state = {
+		id: 'happyjy',
+		name: 'jyoon',
+		age: '30',
+		date: '20200524'
+	};
+	return (
+		<div className='container'>
+			<div className='subContainerLeft'>
+				<ul className='examples'>
+					{examples &&
+						examples.map((v, i) => (
+							<li key={i} className='example' onClick={moveExample} data-index={i}>
+								{v.codeNumber}
+								<br /> {v.title}
+							</li>
+						))}
+				</ul>
+			</div>
+			<div className='subContainerRight'>
+				<div className='itemMove'>
+					<ul className='buttonContainer'>
+						<li className='buttonItem' onClick={moveFirtst}>
+							first
+						</li>
+						<li className='buttonItem' onClick={movePrevious}>
+							previous
+						</li>
+						<li className='buttonItem' onClick={moveNext}>
+							next
+						</li>
+						<li className='buttonItem' onClick={moveLast}>
+							last
+						</li>
+					</ul>
+				</div>
+				<hr />
+				<div className='component'>{Component.comp && <Component.comp {...state} />}</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
