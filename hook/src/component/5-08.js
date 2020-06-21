@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 /*
-  코드 5-8 useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기
+  코드 5-8 useEffect 훅을 이용해서 이벤트 여러 함수를 등록하고 해제하기
   * 브라우저 가로 조절하면 숫자가 바뀐다.
 
   * POINT1: addEventListener("resize")
@@ -28,7 +28,7 @@ export default function () {
         <h1> 설명 </h1>
         <p>
           {" "}
-          코드 5-8 useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기
+          코드 5-8 useEffect 훅을 이용해서 이벤트 여러 함수를 등록하고 해제하기
         </p>
         <p>* 브라우저 가로 조절하면 숫자가 바뀐다.</p>
         <p> </p>

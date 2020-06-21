@@ -38,7 +38,7 @@
 
 3. 이벤트 처리 함수를 등록하고 해제하는 기능: 함수형 컴포넌트로 작성하기
 
-- 코드 5-8 useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기
+- 코드 5-8 useEffect 훅을 이용해서 이벤트 여러 함수를 등록하고 해제하기
 
 4. 이벤트 처리 함수의 등록하고 해제하는 기능: 클래스형 컴포넌트로 작성하기
 
@@ -65,11 +65,11 @@
 3. useHasMounted 커스텀 훅
 
 - 코드 5-14 useHasMounted 커스텀 훅
-- 코드 5-15 widthHasMounted 코차 컴포넌트
+- 코드 5-15 withHasMounted 고차 컴포넌트
 
 ### 1.5 훅 사용 시 지켜야 할 규칙
 
-- 코드 5-16 훅 사용 시 규칙1을 위한반 경우
+- 코드 5-16 훅 사용 시 규칙을 위한반 경우
 
 1. 훅의 호출 순서가 같아야 하는이유
 
@@ -144,7 +144,7 @@
 - 코드 5-34 usePrevious 커스텀 훅
 - 코드 5-35 훅으로 변환한 componentDidUpdate 메서드
 - 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
-- 코드 5-37 useonupdate 커스텀 훅
+- 코드 5-37 useOnUpdate 커스텀 훅
 
 ### 3.3 getDerivedStateFromProps 메서드
 
@@ -174,4 +174,4 @@
 
 2. 클래스형 컴포넌트에서 useHasMounted 훅 이용하기
 
-- 코드 5-45 클래스형 컴포넌트에서 widthHasMounted 고차 컴포넌트 사용하기
+- 코드 5-45 클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기

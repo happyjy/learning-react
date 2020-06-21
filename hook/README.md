@@ -38,7 +38,7 @@
 
 3. 이벤트 처리 함수를 등록하고 해제하는 기능: 함수형 컴포넌트로 작성하기
 
-- [x] 코드 5-8 useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기
+- [x] 코드 5-8 useEffect 훅을 이용해서 이벤트 여러 함수를 등록하고 해제하기
 
 4. 이벤트 처리 함수의 등록하고 해제하는 기능: 클래스형 컴포넌트로 작성하기
 
@@ -56,63 +56,69 @@
 
 1. useWindowWidth 커스텀 훅
 
-- [ ] 코드 5-12 useWindowWidth 커스텀 훅
+- [x] 코드 5-12 useWindowWidth 커스텀 훅
 
 2. useWindowWidth 훅 사용하기
 
-- [ ] 코드 5-13 useWindowWidth 훅 사용하기
+- [x] 코드 5-13 useWindowWidth 훅 사용하기
 
 3. useHasMounted 커스텀 훅
 
-- [ ] 코드 5-14 useHasMounted 커스텀 훅
-- [ ] 코드 5-15 widthHasMounted 코차 컴포넌트
+- [x] 코드 5-14 useHasMounted 커스텀 훅
+- [x] 코드 5-15 withHasMounted 고차 컴포넌트
 
 ### 1.5 훅 사용 시 지켜야 할 규칙
 
-- [ ] 코드 5-16 훅 사용 시 규칙1을 위한반 경우
+- 아래 규칙을 지켜야 리액트가 각 훅의 상태를 제대로 기억할 수 있다.
+- 훅은 함수형 컴포넌트를 위한 기능(규칙2) -> 클래스형 컴포넌트의 메서드, 일반 함수에서 사용할 수 없다.
+
+  - 규칙 1: 하나의 컴포넌트에서 훅을 호출하는 순서는 항상 같아야 한다.
+  - 규칙 2: 훅은 함수형 컴포넌트 또는 커스텀 훅 안에서만 호출되어야 한다.
+
+* [x] 코드 5-16 훅 사용 시 규칙을 위한반 경우
 
 1. 훅의 호출 순서가 같아야 하는이유
 
-- [ ] 코드 5-17 여러 개의 훅 사용하기
+- [x] 코드 5-17 여러 개의 훅 사용하기
 
 2. 리액트가 내부적으로 훅을 처리하는 방식
 
-- [ ] 코드 5-18 의사코드로 표현한 리액트의 내부 코드
+- [x] 코드 5-18 의사코드로 표현한 리액트의 내부 코드
 
 ## 2. 리액트 내장 훅 살펴보기
 
 ### 2.1 Consumer 컴포넌트 없이 콘텍스트 사용하기: useContext
 
-- [ ] 코드 5-18 의사코드로 표현한 리액트의 내부 코드
-- [ ] 코드 5-19 훅을 사용하지 않고 콘텍스트 API를 사용하기
+- [x] 코드 5-19 훅을 사용하지 않고 콘텍스트 API를 사용하기
+- [x] 코드 5-20 useContext 훅 사용하기
 
 ### 2.2 함수형 컴포넌트에서 돔 요소 접근하기: useEffect
 
-- [ ] 코드 5-21 useRef 훅 사용하기
+- [x] 코드 5-21 useRef 훅 사용하기
 
 1. 함수형 컴포넌트에서 렌더링과 무관한 값 저장하기
 
-- [ ] 코드 5-22 useRef 훅을 이용해서 이전 상탯값 저장하기
+- [x] 코드 5-22 useRef 훅을 이용해서 이전 상탯값 저장하기
 
 ### 2.3 메모이제이션 훅: useMemo, useCallback
 
 1. useMemo
 
-- [ ] 코드 5-23 useMemo 훅의 사용 예
+- [x] 코드 5-23 useMemo 훅의 사용 예
 
 2. useCallback
 
-- [ ] 코드 5-24 useCallback 훅이 필요한 예
+- [x] 코드 5-24 useCallback 훅이 필요한 예
 
-- [ ] 코드 5-25 useCallback 훅 사용하기
+- [x] 코드 5-25 useCallback 훅 사용하기
 
 ### 2.4 컴포넌트의 상탯값을 리덕스처럼 관리하기: useReducer
 
-- [ ] 코드 5-26 useReducer 훅의 사용 예
+- [x] 코드 5-26 useReducer 훅의 사용 예
 
 1. 트리의 깊은 곳으로 이벤트 처리 함수 전달하기
 
-- [ ] 코드 5-27 useReducer 훅과 콘텍스트 API를 이용해서 이벤트 처리 함수를 전달하기
+- [x] 코드 5-27 useReducer 훅과 콘텍스트 API를 이용해서 이벤트 처리 함수를 전달하기
 
 ### 2.5 부모 컴포넌트에서 접근 가능한 함수 구현하기: useImperativeHandle
 
@@ -129,22 +135,22 @@
 1. useLayoutEffect
 2. useDebugValue
 
-- [ ] 코드 5-30 useDebugValue 훅을 사용하는 코드
+- [x] 코드 5-30 useDebugValue 훅을 사용하는 코드
 
 ## 3. 클래스형 컴포넌트와 훅
 
 ### 3.1 constructor 메서드
 
-- [ ] 코드 5-31 훅으로 변환할 constructor 메서드
-- [ ] 코드 5-32 constructor 메서드를 훅으로 구현하기
-- [ ] 코드 5-33 useOnFirstRender 커스텀 훅
+- [x] 코드 5-31 훅으로 변환할 constructor 메서드
+- [x] 코드 5-32 constructor 메서드를 훅으로 구현하기
+- [x] 코드 5-33 useOnFirstRender 커스텀 훅
 
 ### 3.2 componentDidUpdate 메서드
 
-- [ ] 코드 5-34 usePrevious 커스텀 훅
-- [ ] 코드 5-35 훅으로 변환한 componentDidUpdate 메서드
-- [ ] 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
-- [ ] 코드 5-37 useonupdate 커스텀 훅
+- [x] 코드 5-34 usePrevious 커스텀 훅
+- [x] 코드 5-35 훅으로 변환한 componentDidUpdate 메서드
+- [x] 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
+- [x] 코드 5-37 useOnUpdate 커스텀 훅
 
 ### 3.3 getDerivedStateFromProps 메서드
 
@@ -174,4 +180,4 @@
 
 2. 클래스형 컴포넌트에서 useHasMounted 훅 이용하기
 
-- [ ] 코드 5-45 클래스형 컴포넌트에서 widthHasMounted 고차 컴포넌트 사용하기
+- [ ] 코드 5-45 클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기

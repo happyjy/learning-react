@@ -1,33 +1,33 @@
 export default (function () {
   return [
-    // { codeNumber: "5-01", title: "useState 훅 사용하기" },
-    // { codeNumber: "5-02", title: "클래스형 컴포넌트에서 상태값 관리하기" },
-    // { codeNumber: "5-03", title: "여러 개의 useState 훅사용하기" },
-    // {
-    //   codeNumber: "5-04",
-    //   title: "하나의 useState 훅으로 여러 상탯값 관리하기",
-    // },
-    // { codeNumber: "5-05", title: "useEffect 훅의 사용예" },
-    // { codeNumber: "5-06", title: "useEffect 훅에서 API 호출하기" },
-    // { codeNumber: "5-07", title: "클래스형 컴포넌트에서 API 호출하기" },
-    // {
-    //   codeNumber: "5-08",
-    //   title: "useEffect 훅을 이용해서 이벤트 어리 함수를 등록하고 해제하기",
-    // },
-    // {
-    //   codeNumber: "5-09",
-    //   title: "이벤트 처리 함수의 등록과 해제를 클래스형 컴포넌트로 작성하기",
-    // },
-    // {
-    //   codeNumber: "5-10",
-    //   title: "훅을 사용하면 로직별로 코드를 모을 수 있다.",
-    // },
-    // { codeNumber: "5-11", title: "클래스형 컴포넌트에서는 로직이 분산된다." },
+    { codeNumber: "5-01", title: "useState 훅 사용하기" },
+    { codeNumber: "5-02", title: "클래스형 컴포넌트에서 상태값 관리하기" },
+    { codeNumber: "5-03", title: "여러 개의 useState 훅사용하기" },
+    {
+      codeNumber: "5-04",
+      title: "하나의 useState 훅으로 여러 상탯값 관리하기",
+    },
+    { codeNumber: "5-05", title: "useEffect 훅의 사용예" },
+    { codeNumber: "5-06", title: "useEffect 훅에서 API 호출하기" },
+    { codeNumber: "5-07", title: "클래스형 컴포넌트에서 API 호출하기" },
+    {
+      codeNumber: "5-08",
+      title: "useEffect 훅을 이용해서 이벤트 여러 함수를 등록하고 해제하기",
+    },
+    {
+      codeNumber: "5-09",
+      title: "이벤트 처리 함수의 등록과 해제를 클래스형 컴포넌트로 작성하기",
+    },
+    {
+      codeNumber: "5-10",
+      title: "훅을 사용하면 로직별로 코드를 모을 수 있다.",
+    },
+    { codeNumber: "5-11", title: "클래스형 컴포넌트에서는 로직이 분산된다." },
     { codeNumber: "5-12", title: "useWindowWidth 커스텀 훅" },
     { codeNumber: "5-13", title: "useWindowWidth 훅 사용하기" },
     { codeNumber: "5-14", title: "useHasMounted 커스텀 훅" },
-    { codeNumber: "5-15", title: "widthHasMounted 코차 컴포넌트" },
-    { codeNumber: "5-16", title: "훅 사용 시 규칙1을 위한반 경우" },
+    { codeNumber: "5-15", title: "withHasMounted 고차 컴포넌트" },
+    { codeNumber: "5-16", title: "훅 사용 시 규칙을 위한반 경우" },
     { codeNumber: "5-17", title: "여러 개의 훅 사용하기" },
     { codeNumber: "5-18", title: "의사코드로 표현한 리액트의 내부 코드" },
     { codeNumber: "5-19", title: "훅을 사용하지 않고 콘텍스트 API를 사용하기" },
@@ -61,7 +61,7 @@ export default (function () {
       codeNumber: "5-36",
       title: "componentDidUpdate 메서드를 훅으로 변환하기",
     },
-    { codeNumber: "5-37", title: "useonupdate 커스텀 훅" },
+    { codeNumber: "5-37", title: "useOnUpdate 커스텀 훅" },
     {
       codeNumber: "5-38",
       title: "훅으로 변경할 getDerivedStateFromProps 정적 메서드",
@@ -90,7 +90,7 @@ export default (function () {
     },
     {
       codeNumber: "5-45",
-      title: "클래스형 컴포넌트에서 widthHasMounted 고차 컴포넌트 사용하기",
+      title: "클래스형 컴포넌트에서 withHasMounted 고차 컴포넌트 사용하기",
     },
   ];
 })();

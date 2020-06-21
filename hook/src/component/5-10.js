@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 /*
-  코드 5-10 훅을 사용하면 로직별로 코드를 모을 수 있다.
+  코드 5-10 ⭐️ 훅을 사용하면 로직별로 코드를 모을 수 있다.
   * 코드 5-06, 08 API호출, windowWidth 코드를 합쳐보자!
   * 각각의 로직이 다른 useEffect에 있어 가독성이 좋다.
 */
@@ -30,7 +30,7 @@ export default ({ userId = "jyoon " }) => {
     <div>
       <div>
         <h1> 설명 </h1>
-        <p> 코드 5-10 훅을 사용하면 로직별로 코드를 모을 수 있다.</p>
+        <p> 코드 5-10 ⭐️ 훅을 사용하면 로직별로 코드를 모을 수 있다.</p>
         <p>* 코드 5-06, 08 API호출, windowWidth 코드를 합쳐보자!</p>
         <p>* 각각의 로직이 다른 useEffect에 있어 가독성이 좋다.</p>
       </div>
