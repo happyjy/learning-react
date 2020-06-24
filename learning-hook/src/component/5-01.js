@@ -26,9 +26,3 @@ export default () => {
 		</div>
 	);
 };
-
-// export function explanation() {
-//   return {
-//     exampleNum: "code 4-31",
-//   };
-// }
