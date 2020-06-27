@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 4.4 렌더링 속도를 올리기 위한 성능최적화 방법
 
-## Available Scripts
+## 4.4.1 생탯값을 불변 객체로 관리하기
 
-In the project directory, you can run:
+- [x] 코드 4-48 상탯값을 불변 객체로 관리하기
+- [x] 코드 4-49 상탯값을 불변 객체로 관리하는 코드
+- [x] 코드 4-50 상탯값을 불변 객체로 관리하는 코드와 그렇지 않은 코드의 실행결과
+- [x] 리액트 컴포넌트의 렌더링과정
+- [x] 코드 4-51 특정 상탯값의 변경 전과 변경 후
 
-### `yarn start`
+## 4.4.2 렌더 함수에서 새로운 객체 만들지 않기
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [x] 코드 4-54 렌더 함수에서 새로운 객체를 만들어서 자식 컴포넌트의 속성값으로 전달하기
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 4.4.3 메모이제이션(memoization) 이용하기
 
-### `yarn test`
+- [x] 코드 4-55 메모이제이션 사용예
+- [x] 코드 4-56 메모이제이션의 잘못된 사용예
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 4.4.4 성능 최적화를 위한 도구들 이용하기

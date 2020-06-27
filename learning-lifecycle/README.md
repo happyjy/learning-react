@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 3장 중요하지만 헷갈리는 리액트 개념 이해하기
 
-In the project directory, you can run:
+# 3.3 생명 주기 메서드
 
-### `yarn start`
+## LIFE CYCLE 기본
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [참고 youtube강의](https://youtu.be/7iHepe36m0c)
+- [실습 gitHub 주소](https://github.com/happyjy/learning-reactLifeCycle)
+- component > LifecycleForBeginner.js에 내용이 있음
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- lifeCycle별로 실제 프로젝트에서 어제 사용되면 좋은지 노하우가 있다.
+- [실습 gitHub 주소](https://github.com/happyjy/learning-reactLifeCycle)
+  - component 폴더 > 코드 숫자 별로 파일이 있음.
 
-### `yarn test`
+## 3.3.1 constructor 메서드
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] 코드 3-27 constructor 메서드의 기본구조
+- [x] 코드 3-28 초기 속성값으로부터 상탯값을 만드는 코드
+- [x] 코드 3-29 constructor 메서드 없이 속성값을 이용하는 코드
+- [x] 코드 3-30 속성값에 항상 의존적인 상탯값을 함수로 대처한 코드
+- [x] 코드 3-31 constructor 메서드에서 setState 메서드를 호출하는 잘못된 예
+- [x] 코드 3-32 constructor 메서드에서 API를 호출하는 잘못된 예
 
-### `yarn build`
+## 3.3.2 getDerivedStateFromProps 메서드
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] 코드 3-33 getDerivedStateFromProps 메서드에서 이전 속성값 이용하기
+- [x] 코드 3-35 getDerivedStateFromProps를 이용한 메모이제이션
+- [x] 코드 3-36 로다시 패키지를 이용한 메모이제이션 예
+- [x] 코드 3-37 속성값 변경시 상탯값을 초기화하는 코드
+- [x] 코드 3-38 key 속성값을 이용한 코드
+- [x] 코드 3-39 상탯갑슬 부모 컴포넌트에서 관리하는 코드
+- [x] 코드 3-40 상탯값이 전후 속성값에 의존적인 경우 사용
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 3.3.3 render 메서드
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] 코드 3-41 render 메서드가 반환할 수 있는 값
+- [x] 코드 3-42 렌더함수에서 조건부 렌더링을 하는 코드
+- [x] 코드 3-43 리액트 포털을 사용한 코드
 
-### `yarn eject`
+## 3.3.4 componentDidMount 메서드
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] 코드 3-44 componentDidMount 메서드에서 돔 요소에 접근하는 코드
+- [x] 코드 3-45 constructor 메서드에서 API 요청을 보내는 코드
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3.3.5 shouldComponentUpdate 메서드
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x] 코드 3-46 shouldComponentUpdate 메서드의 기본 구조
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 3.3.6 getSnapshotBeforeUpdate 메서드
 
-## Learn More
+- [x] 코드 3-47 돔 요소의 높잇값이 변경됐는지 검사하는 코드
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 3.3.7 componentDidUpdate 메서드
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] 코드 3-48 스크롤이 가능해지면 알려주는 코드
+- [x] 코드 3-49 componentDidUpdate 메서드에서 API를 호출하는 코드
+- [x] 코드 3-50 componentDidMount 메서드에서도 API를 호출하도록 변경하기
 
-### Code Splitting
+## 3.3.8 componentWillUnmount 메서드
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [x] 코드 3-51 componentWillUnmount 메서드에서 이벤트 처리 해제하기
 
-### Analyzing the Bundle Size
+## 3.3.9 getDerivedStateFromError, componentDidCatch 메서드
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [ ] 코드 3-52 ErrorBoundary 컴포넌트
+- [ ] 코드 3-53 ErrorBoundary 컴포넌트를사용한 코드
+- [ ] 코드 3-54 이벤트 처리 메서드에서 예외가 발생하는 경우

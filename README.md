@@ -1,16 +1,21 @@
-# 테스트 코드 실행하는 방법
+# 파일별 실전 리엑트 프로그래밍 챕터
+* learning-hook
+  - 5장 진화된 함수형 컴포넌트: 리액트 훅 
 
-index.js 파일에서 원하는 예제 react컴포넌트가 있는 Appxxx.js 파일을 선택한다.
+* learning-lifecycle
+  - 3.3 생명주기 메서드 
+
+* learning-manage_component
+  - 4.3 컴포넌트의 공통 기능 관리하기 
+
+* learning-manage-performance
+  - 4.4 렌더링 속도를 올리기 위한 성능 최적화 방법
+
+* learning-redux
+  - [노마드코더](https://nomadcoders.co/redux-for-beginners/lobby)
+
 
 # 3장 중요하지만 헷갈리는 리액트 개념 이해하기
-
-3.1 상탯값과 속성값으로 관리하는 UI 데이터
-3.1.1 리액트를 사용한 코드의 특징
-3.1.2 컴포넌트의 속성값과 상탯값
-
-3.2 리액트 요소와 가상 돔
-3.2.1 리액트 요소 이해하기
-3.2.2 리액트 요소가 돔 요소로 만들어지는 과정
 
 # 3.3 생명 주기 메서드
 
@@ -250,11 +255,11 @@ index.js 파일에서 원하는 예제 react컴포넌트가 있는 Appxxx.js 파
 
 1. useImperativeHandle 훅으로 외부로 공개할 함수 정의하기
 
-- [ ] 코드 5-28 부모 컴포넌트에서 접근 가능한 함수를 구현하기
+- [x] 코드 5-28 부모 컴포넌트에서 접근 가능한 함수를 구현하기
 
 2. useImperativeHandle 훅으로 정의한 함수를 외부에서 호출하기
 
-- [ ] 코드 5-29 부모 컴포넌트에서 자식 컴포넌트 함수 호출하기
+- [x] 코드 5-29 부모 컴포넌트에서 자식 컴포넌트 함수 호출하기
 
 ### 5.2.6 기타 리액트 내장 훅: useLayoutEffect, useDebugValue
 

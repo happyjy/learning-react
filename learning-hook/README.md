@@ -1,14 +1,12 @@
-# 진화된 함수형 컴포넌트: 리액트 훅
+## 5.1 리액트 훅 기초 익히기
 
-## 1 리액트 훅 기초 익히기
-
-### 1.1 리액트 훅이란?
+### 5.1.1 리액트 훅이란?
 
 1. 로직을 재사용하는 기존 방식의 한계
 2. 클래스 형 컴포넌트의 한계
 3. 훅의 장점
 
-### 1.2 함수형 컴포넌트에 상탯값 추가하기: useState
+### 5.1.2 함수형 컴포넌트에 상탯값 추가하기: useState
 
 - [x] 코드 5-1 useState 훅 사용하기
 
@@ -24,7 +22,7 @@
 
 - [x] 코드 5-4 하나의 useState 훅으로 여러 상탯값 관리하기
 
-### 1.3 함수형 컴포넌트에서 생명 주기 함수 이용하기: useEffect
+### 5.1.3 함수형 컴포넌트에서 생명 주기 함수 이용하기: useEffect
 
 - [x] 코드 5-5 useEffect 훅의 사용예
 
@@ -52,7 +50,7 @@
 
 - [x] 코드 5-11 클래스형 컴포넌트에서는 로직이 분산된다.
 
-### 1.4 훅 직접 만들기
+### 5.1.4 훅 직접 만들기
 
 1. useWindowWidth 커스텀 훅
 
@@ -67,7 +65,7 @@
 - [x] 코드 5-14 useHasMounted 커스텀 훅
 - [x] 코드 5-15 withHasMounted 고차 컴포넌트
 
-### 1.5 훅 사용 시 지켜야 할 규칙
+### 5.1.5 훅 사용 시 지켜야 할 규칙
 
 - 아래 규칙을 지켜야 리액트가 각 훅의 상태를 제대로 기억할 수 있다.
 - 훅은 함수형 컴포넌트를 위한 기능(규칙2) -> 클래스형 컴포넌트의 메서드, 일반 함수에서 사용할 수 없다.
@@ -85,14 +83,14 @@
 
 - [x] 코드 5-18 의사코드로 표현한 리액트의 내부 코드
 
-## 2. 리액트 내장 훅 살펴보기
+## 5.2. 리액트 내장 훅 살펴보기
 
-### 2.1 Consumer 컴포넌트 없이 콘텍스트 사용하기: useContext
+### 5.2.1 Consumer 컴포넌트 없이 콘텍스트 사용하기: useContext
 
 - [x] 코드 5-19 훅을 사용하지 않고 콘텍스트 API를 사용하기
 - [x] 코드 5-20 useContext 훅 사용하기
 
-### 2.2 함수형 컴포넌트에서 돔 요소 접근하기: useRef
+### 5.2.2 함수형 컴포넌트에서 돔 요소 접근하기: useRef
 
 - [x] 코드 5-21 useRef 훅 사용하기
 
@@ -100,7 +98,7 @@
 
 - [x] 코드 5-22 useRef 훅을 이용해서 이전 상탯값 저장하기
 
-### 2.3 메모이제이션 훅: useMemo, useCallback
+### 5.2.3 메모이제이션 훅: useMemo, useCallback
 
 1. useMemo
 
@@ -112,7 +110,7 @@
 
 - [x] 코드 5-25 useCallback 훅 사용하기
 
-### 2.4 컴포넌트의 상탯값을 리덕스처럼 관리하기: useReducer
+### 5.2.4 컴포넌트의 상탯값을 리덕스처럼 관리하기: useReducer
 
 - [x] 코드 5-26 useReducer 훅의 사용 예
 
@@ -120,50 +118,50 @@
 
 - [x] 코드 5-27 useReducer 훅과 콘텍스트 API를 이용해서 이벤트 처리 함수를 전달하기
 
-### 2.5 부모 컴포넌트에서 접근 가능한 함수 구현하기: useImperativeHandle
+### 5.2.5 부모 컴포넌트에서 접근 가능한 함수 구현하기: useImperativeHandle
 
 1. useImperativeHandle 훅으로 외부로 공개할 함수 정의하기
 
-- [ ] 코드 5-28 부모 컴포넌트에서 접근 가능한 함수를 구현하기
+- [x] 코드 5-28 부모 컴포넌트에서 접근 가능한 함수를 구현하기
 
 2. useImperativeHandle 훅으로 정의한 함수를 외부에서 호출하기
 
-- [ ] 코드 5-29 부모 컴포넌트에서 자식 컴포넌트 함수 호출하기
+- [x] 코드 5-29 부모 컴포넌트에서 자식 컴포넌트 함수 호출하기
 
-### 2.6 기타 리액트 내장 훅: useLayoutEffect, useDebugValue
+### 5.2.6 기타 리액트 내장 훅: useLayoutEffect, useDebugValue
 
 1. useLayoutEffect
 2. useDebugValue
 
 - [x] 코드 5-30 useDebugValue 훅을 사용하는 코드
 
-## 3. 클래스형 컴포넌트와 훅
+## 5.3. 클래스형 컴포넌트와 훅
 
-### 3.1 constructor 메서드
+### 5.3.1 constructor 메서드
 
 - [x] 코드 5-31 훅으로 변환할 constructor 메서드
 - [x] 코드 5-32 constructor 메서드를 훅으로 구현하기
 - [x] 코드 5-33 useOnFirstRender 커스텀 훅
 
-### 3.2 componentDidUpdate 메서드
+### 5.3.2 componentDidUpdate 메서드
 
 - [x] 코드 5-34 usePrevious 커스텀 훅
 - [x] 코드 5-35 훅으로 변환할 componentDidUpdate 메서드
 - [x] 코드 5-36 componentDidUpdate 메서드를 훅으로 변환하기
 - [x] 코드 5-37 useOnUpdate 커스텀 훅
 
-### 3.3 getDerivedStateFromProps 메서드
+### 5.3.3 getDerivedStateFromProps 메서드
 
 - [x] 코드 5-38 훅으로 변경할 getDerivedStateFromProps 정적 메서드
 - [x] 코드 5-39 getDerivedStateFromProps 정적 메서드를 훅으로 변경하기
 
-### 3.4 forceUpdate 메서드
+### 5.3.4 forceUpdate 메서드
 
 - [x] 코드 5-40 useReducer 훅을 이용해서 forceUpdate 메서드를 구현하기
 
-## 4. 기존 클래스형 컴포넌트를 고려한 커스텀 훅 작성법
+## 5.4. 기존 클래스형 컴포넌트를 고려한 커스텀 훅 작성법
 
-### 4.1 커스텀 훅의 반환값이 없는 경우
+### 5.4.1 커스텀 훅의 반환값이 없는 경우
 
 - [x] 코드 5-41 디바운스 기능을 제공하는 useDebounce 훅의 구현 및 사용
 
@@ -172,7 +170,7 @@
 - [x] 코드 5-42 useDebounce 훅의 래퍼 컴포넌트
 - [x] 코드 5-43 클래스형 컴포넌트에서 Debounce 컴포넌트를 사용하기
 
-### 4.2 커스텀 훅의 반환값이 있는 경우
+### 5.4.2 커스텀 훅의 반환값이 있는 경우
 
 1. 마운트 상태를 관리하는 useHasMounted 훅
 
